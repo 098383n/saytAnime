@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anime Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <button id="back-btn" class="back-button">⟵ Назад</button>
+  <h1 id="anime-title"></h1>
+</header>
+
+<main>
+  <section id="episode-list"></section>
+</main>
+
+<!-- === Видео модал === -->
+<div id="video-modal" class="hidden">
+  <div class="modal-content">
+    <span id="close-btn">&times;</span>
+
+    <video id="anime-video" controls></video>
+
+    <!-- Контролы 10 секунд -->
+    <div id="video-controls">
+      <button id="back-10">⟵ -10 сек</button>
+      <button id="forward-10">+10 сек ⟶</button>
+    </div>
+
+    <!-- Выбор качества -->
+    <div id="quality-selector">
+      <button data-quality="1080">1080p</button>
+      <button data-quality="720">720p</button>
+      <button data-quality="480">480p</button>
+    </div>
+  </div>
+</div>
+
+<script src="all.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #111;
+  color: #fff;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #222;
+  padding: 10px 20px;
+}
+#back-btn {
+  background: #00bfff;
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
+}
+#back-btn:hover { background: #0095cc; transform: scale(1.05); }
+
+/* СПИСОК АНИМЕ */
+#anime-list, #episode-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.anime-card {
+  background: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+}
+.anime-card:hover { transform: scale(1.05); box-shadow: 0 0 15px #00bfff; }
+.anime-card img { width: 100%; height: 200px; object-fit: cover; }
+.anime-info { padding: 10px; }
+.desc-preview { font-style: italic; color: #ccc; }
+
+/* VIDEO MODAL */
+#video-modal { position: fixed; inset:0; background: rgba(0,0,0,0.9); display: flex; justify-content: center; align-items: center; z-index: 1000; }
+#video-modal.hidden { display: none; }
+.modal-content { position: relative; width: 80%; max-width: 800px; }
+#anime-video { width: 100%; border-radius: 10px; }
+
+/* CLOSE BUTTON */
+#close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #fff;
+  background: #222;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #00bfff;
+  transition: 0.2s;
+}
+#close-btn:hover { background:#00bfff; color:#000; }
+
+/* КНОПКИ ПЕРЕМОТКИ */
+#video-controls { display:flex; gap:10px; margin-top:12px; }
+#back-10,#forward-10 { flex:1; background:#303030; color:#fff; border:none; border-radius:6px; padding:10px; cursor:pointer; transition:.2s; }
+#back-10:hover,#forward-10:hover { background:#00bfff; transform: scale(1.05); }
+
+/* КНОПКИ КАЧЕСТВА */
+#quality-selector { display:flex; justify-content:center; gap:10px; margin-top:12px; }
+#quality-selector button { background:#454545; color:#fff; border:none; border-radius:6px; padding:8px 12px; cursor:pointer; transition:.2s; }
+#quality-selector button:hover { background:#00bfff; transform: scale(1.05); }
+
+/* АДАПТИВ */
+@media (max-width:600px){
+  #back-btn,#back-10,#forward-10,#quality-selector button{ font-size:14px; padding:6px 10px; }
+}
